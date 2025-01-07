@@ -6,7 +6,7 @@
 ```sql
 SELECT column1, column2, ... FROM table_name;
 ```
-- Select all columns:
+- **Select all columns**:
   ```sql
   SELECT * FROM table_name;
   ```
@@ -17,7 +17,7 @@ SELECT column1, column2, ...
 FROM table_name
 WHERE condition;
 ```
-- Example:
+- **Example**:
   ```sql
   SELECT * FROM employees WHERE salary > 50000;
   ```
@@ -42,7 +42,7 @@ SELECT column1, column2, ...
 FROM table_name
 ORDER BY column_name [ASC|DESC];
 ```
-- Default sorting is **ASC** (ascending), use **DESC** for descending.
+- **Default sorting is ASC** (ascending), use **DESC** for descending:
   ```sql
   SELECT * FROM employees ORDER BY salary DESC;
   ```
@@ -53,7 +53,7 @@ SELECT column1, column2, ...
 FROM table_name
 LIMIT number;
 ```
-- Example:
+- **Example**:
   ```sql
   SELECT * FROM employees LIMIT 5;
   ```
@@ -86,35 +86,39 @@ SELECT column_name, COUNT(*)
 FROM table_name
 GROUP BY column_name;
 ```
-- Example:
+- **Example**:
   ```sql
   SELECT department, COUNT(*) FROM employees GROUP BY department;
   ```
 
 ## 5. Joins
 
-### INNER JOIN (Returns records with matching values in both tables)
+### INNER JOIN
+Returns records with matching values in both tables.
 ```sql
 SELECT columns
 FROM table1
 INNER JOIN table2 ON table1.column = table2.column;
 ```
 
-### LEFT JOIN (Returns all records from the left table, and matching records from the right table)
+### LEFT JOIN
+Returns all records from the left table, and matching records from the right table.
 ```sql
 SELECT columns
 FROM table1
 LEFT JOIN table2 ON table1.column = table2.column;
 ```
 
-### RIGHT JOIN (Returns all records from the right table, and matching records from the left table)
+### RIGHT JOIN
+Returns all records from the right table, and matching records from the left table.
 ```sql
 SELECT columns
 FROM table1
 RIGHT JOIN table2 ON table1.column = table2.column;
 ```
 
-### FULL JOIN (Returns records when there is a match in either left or right table)
+### FULL JOIN
+Returns records when there is a match in either left or right table.
 ```sql
 SELECT columns
 FROM table1
@@ -143,7 +147,7 @@ WHERE column2 = (SELECT column FROM table2 WHERE condition);
 INSERT INTO table_name (column1, column2, ...)
 VALUES (value1, value2, ...);
 ```
-- Example:
+- **Example**:
   ```sql
   INSERT INTO employees (name, salary) VALUES ('John Doe', 60000);
   ```
@@ -154,7 +158,7 @@ UPDATE table_name
 SET column1 = value1, column2 = value2
 WHERE condition;
 ```
-- Example:
+- **Example**:
   ```sql
   UPDATE employees SET salary = 70000 WHERE name = 'John Doe';
   ```
@@ -163,7 +167,7 @@ WHERE condition;
 ```sql
 DELETE FROM table_name WHERE condition;
 ```
-- Example:
+- **Example**:
   ```sql
   DELETE FROM employees WHERE name = 'John Doe';
   ```
@@ -178,7 +182,7 @@ CREATE TABLE table_name (
     ...
 );
 ```
-- Example:
+- **Example**:
   ```sql
   CREATE TABLE employees (
     id INT PRIMARY KEY,
@@ -193,10 +197,12 @@ CREATE TABLE table_name (
 ```sql
 ALTER TABLE table_name ADD column_name datatype;
 ```
+
 #### Drop a column
 ```sql
 ALTER TABLE table_name DROP COLUMN column_name;
 ```
+
 #### Modify a column
 ```sql
 ALTER TABLE table_name MODIFY column_name new_datatype;
@@ -255,7 +261,7 @@ Indexes are used to speed up the retrieval of rows from a database table.
 ```sql
 CREATE INDEX index_name ON table_name (column_name);
 ```
-- Example:
+- **Example**:
   ```sql
   CREATE INDEX idx_salary ON employees (salary);
   ```
@@ -286,7 +292,7 @@ FROM table_name
 WHERE condition;
 ```
 
-- Example:
+- **Example**:
   ```sql
   CREATE VIEW high_salary_employees AS
   SELECT * FROM employees WHERE salary > 60000;
